@@ -4,7 +4,7 @@
  :questions [
              {:id 0
               :topic :evidence
-              :question "Are you aware that a severed human foot was on the beach not far from your van?"
+              :question "Detective Rex Flotsam, SBPD. Are you aware that a severed human foot was on the beach not far from your van?"
               :realness 0
               }
              {:id 1
@@ -57,7 +57,7 @@
               :realness 1}
              {:id 13
               :topic :victim
-              :question ""
+              :question "I suspect there was a homicide, but I'm not sure about the motive."
               :realness 2}
              {:id 14
               :topic :victim
@@ -65,11 +65,47 @@
               :realness 3}
              {:id 15
               :topic :victim
-              :question ""
+              :question "I think... I think the murder had something to do with... getting a fix."
               :realness 4}
              {:id 16
               :topic :victim
-              :question ""
+              :question "Mary... what have I done?"
+              :realness 5}
+             {:id 17
+              :topic :murder
+              :question "Was there... a murder? I think... I think I remember something."
+              :realness 4}
+             {:id 18
+              :topic :killer
+              :question "I'm detective Rex Flotsam, Beach Cop. Did you kill someone on the beach last night?"
+              :realness 0}
+             {:id 19
+              :topic :killer
+              :question "I'm investigating a murder on behalf of Sunny Beach Police Department. Where were you last night?"
+              :realness 1}
+             {:id 20
+              :topic :killer
+              :question "I'm sure there was a killing here last night. I just need to know the motive, so I can track down the killer."
+              :realness 2}
+             {:id 21
+              :topic :killer
+              :question "I'm having trouble tracking down the killer."
+              :realness 3}
+             {:id 22
+              :topic :killer
+              :question "People keep telling me things about the killings. I don't want to believe them."
+              :realness 4}
+             {:id 23
+              :topic :killer
+              :question "The identity of the killer... they... I... Mary..."
+              :realness 5}
+             {:id 24
+              :topic :evidence
+              :question "Why was someone killed over a shoe? Was this shoe important somehow?"
+              :realness 4}
+             {:id 25
+              :topic :evidence
+              :question "The shoe... she was hiding the stash in the shoe..."
               :realness 5}
              ]
  :answers
@@ -77,17 +113,245 @@
           :answer "I wouldn't know about that."
           :nudge 0}
          {:question 0
-          :answer ""
-          :nudge 0}]
+          :answer "What are you talking about? What severed foot?"
+          :nudge 1}
+         {:question 1
+          :answer "I was around, but didn't see any murders. And I don't have to answer your questions!"
+          :nudge 0}
+         {:question 2
+          :answer "That's... that's not a foot, mate."
+          :nudge 1}
+         {:question 3
+          :answer "Why don't you ask the person who it used to belong to?"
+          :nudge 1}
+         {:question 4
+          :answer "No, officer. I don't know nobody around here."
+          :nudge 0}
+         {:question 5
+          :answer "You mean you don't know?"
+          :nudge 1}
+         {:question 6
+          :answer "Well mate, it's not mine."
+          :nudge 0}
+         {:question 7
+          :answer "This is a new low, even for you."
+          :nudge 1}
+         {:question 8
+          :answer "Look, I may not be your average businessman on the street, but I never done anything like cutting off limbs."
+          :nudge 0}
+         {:question 9
+          :answer "Well, it WOULD be strange if it really were a foot. You should take a closer look."
+          :nudge 1}
+         {:question 10
+          :answer "I didn't see anything, but I heard there were at least two people involved. I would think you'd know at least ONE of them."
+          :nudge 1}
+         {:question 11
+          :answer "No, officer."
+          :nudge 0}
+         {:question 12
+          :answer "I haven't seen the other one, if that's what you mean."
+          :nudge 0}
+         {:question 13
+          :answer "Mate, you are so far gone if you don't know what's going on here."
+          :nudge 1}
+         {:question 14
+          :answer "I had nothing to do with it. If you're not arresting me, I'm not talking."
+          :nudge 0}
+         {:question 15
+          :answer "Yeah, those damn junkies. Always killing each other for a fix. I gotta get out of this business..."
+          :nudge 0}
+         {:question 16
+          :answer "She should have left you while she had the chance. Now she's paid the price."
+          :nudge 1}
+         {:question 17
+          :answer "Your guess is as good as mine. Could have been a murder, yeah."
+          :nudge 0}
+         {:question 18
+          :answer "Not you again. You need to give up the fantasy, mate."
+          :nudge 1}
+         {:question 19
+          :answer "I was here, working. But I have an alibi."
+          :nudge 0}
+         {:question 20
+          :answer "Nothing to do with me. I ain't seen nothin'."
+          :nudge 0}
+         {:question 21
+          :answer "Maybe a little introspection would help."
+          :nudge 1}
+         {:question 22
+          :answer "Maybe you just don't want to face the truth."
+          :nudge 1}
+         {:question 23
+          :answer "I hope you rot in hell for what you did to her."
+          :nudge 1}
+         {:question 24
+          :answer "Maybe there was something inside it. Something you wanted."
+          :nudge 1}
+         {:question 25
+          :answer "...I see"
+          :nudge 0}
+         ]
   :sam [{:question -1
          :answer "I don't know anything, man!"
          :nudge 0}
-        {:question 0
-         :answer ""
-         :nudge 0}]
+         {:question 0
+          :answer "Jesus. Stop acting like you're a cop. This is getting old."
+          :nudge 1}
+         {:question 1
+          :answer ""
+          :nudge 0}
+         {:question 2
+          :answer ""
+          :nudge 0}
+         {:question 3
+          :answer ""
+          :nudge 1}
+         {:question 4
+          :answer ""
+          :nudge 1}
+         {:question 5
+          :answer ""
+          :nudge 0}
+         {:question 6
+          :answer ""
+          :nudge 0}
+         {:question 7
+          :answer ""
+          :nudge 1}
+         {:question 8
+          :answer ""
+          :nudge 1}
+         {:question 9
+          :answer ""
+          :nudge 1}
+         {:question 10
+          :answer ""
+          :nudge 0}
+         {:question 11
+          :answer ""
+          :nudge 1}
+         {:question 12
+          :answer ""
+          :nudge 0}
+         {:question 13
+          :answer ""
+          :nudge 1}
+         {:question 14
+          :answer ""
+          :nudge 0}
+         {:question 15
+          :answer ""
+          :nudge 1}
+         {:question 16
+          :answer ""
+          :nudge 1}
+         {:question 17
+          :answer ""
+          :nudge 1}
+         {:question 18
+          :answer ""
+          :nudge 1}
+         {:question 19
+          :answer ""
+          :nudge 1}
+         {:question 20
+          :answer ""
+          :nudge 1}
+         {:question 21
+          :answer ""
+          :nudge 1}
+         {:question 22
+          :answer ""
+          :nudge 0}
+         {:question 23
+          :answer ""
+          :nudge 0}
+         {:question 24
+          :answer ""
+          :nudge 1}
+         {:question 25
+          :answer ""
+          :nudge 0}
+        ]
   :luce [{:question -1
           :answer "Your guess is as good as mine."
           :nudge 0}
          {:question 0
           :answer ""
-          :nudge 0}]}
+          :nudge 0}
+         {:question 1
+          :answer ""
+          :nudge 1}
+         {:question 2
+          :answer ""
+          :nudge 0}
+         {:question 3
+          :answer ""
+          :nudge 1}
+         {:question 4
+          :answer ""
+          :nudge 0}
+         {:question 5
+          :answer ""
+          :nudge 1}
+         {:question 6
+          :answer ""
+          :nudge 1}
+         {:question 7
+          :answer ""
+          :nudge 0}
+         {:question 8
+          :answer ""
+          :nudge 1}
+         {:question 9
+          :answer ""
+          :nudge 1}
+         {:question 10
+          :answer ""
+          :nudge 1}
+         {:question 11
+          :answer ""
+          :nudge 1}
+         {:question 12
+          :answer ""
+          :nudge 1}
+         {:question 13
+          :answer ""
+          :nudge 0}
+         {:question 14
+          :answer ""
+          :nudge 1}
+         {:question 15
+          :answer ""
+          :nudge 1}
+         {:question 16
+          :answer ""
+          :nudge 0}
+         {:question 17
+          :answer ""
+          :nudge 1}
+         {:question 18
+          :answer ""
+          :nudge 1}
+         {:question 19
+          :answer ""
+          :nudge 0}
+         {:question 20
+          :answer ""
+          :nudge 1}
+         {:question 21
+          :answer ""
+          :nudge 0}
+         {:question 22
+          :answer ""
+          :nudge 1}
+         {:question 23
+          :answer ""
+          :nudge 0}
+         {:question 24
+          :answer ""
+          :nudge 0}
+         {:question 25
+          :answer ""
+          :nudge 1}
+         ]}

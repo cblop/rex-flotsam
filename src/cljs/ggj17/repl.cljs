@@ -4,6 +4,7 @@
 (def db (re-frame/subscribe [:db]))
 
 (:character @db)
+(:foot @db)
 (keys @db)
 
 (re-frame/dispatch [:character "characters/rex.svg"])
