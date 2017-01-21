@@ -26,6 +26,11 @@
    (:character db)))
 
 (re-frame/reg-sub
- :foot
+ :objects
  (fn [db]
-   (:foot db)))
+   (:objects db)))
+
+(re-frame/reg-sub
+ :dialogue
+ (fn [db]
+   (:dialogue db)))

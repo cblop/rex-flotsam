@@ -6,5 +6,11 @@
    :scenes {:beach {:file "resources/backdrops/beach1.svg"}}
    :characters {:rex {:file "resources/characters/rex.svg"
                       :x 0}}
-   :objects {:foot {:file "resources/objects/foot.svg"}}
+   :objects [{:name "foot"
+              :file "objects/foot.svg"
+              :x "80%"
+              :y "70%"
+              :width "5%"
+              :action #(js/alert "Foot!")}]
+   :dialogue nil
    })

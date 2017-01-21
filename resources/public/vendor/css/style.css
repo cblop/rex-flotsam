@@ -3,3 +3,26 @@
     top:0px;
     left:0px;
 }
+.exit-left {
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:10%;
+    height:100%;
+}
+.exit-left:hover {
+    cursor:w-resize;
+}
+.exit-right {
+    position:absolute;
+    top:0px;
+    left:90%;
+    width:10%;
+    height:100%;
+}
+.exit-right:hover {
+    cursor:e-resize;
+}
+.object:hover {
+    cursor:pointer;
+}

@@ -37,19 +37,57 @@
             :height "100%"}]]
     ))
 
+(defn object [thing]
+    [:img {:class "floatTL object"
+           :style {:top (:y thing)
+                   :left (:x thing)}
+           :src (:file thing)
+           :width (:width thing)
+           :on-click (:action thing)}])
+
+
+(defn dialogue []
+  (let [d (re-frame/subscribe [:dialogue])
+        ]
+    (if-not (nil? @d)
+      [:img {:class "floatTL"
+             :style {:top "5%"
+                     :left (if (= (:character @d) :rex) "5%" "47%")}
+             :src (:file @d)
+             :width "50%"
+             :on-click #()}])))
+
+(defn exit-left []
+  [:div {:class "exit-left"}])
+
+
+(defn exit-right []
+  [:div {:class "exit-right"}])
 
 (defn character []
-  (let [window (dom/getWindow)
-        viewport-size (dom/getViewportSize window)
-        svg (re-frame/subscribe [:character])
+  (let [character (re-frame/subscribe [:character])
         ]
-    ;; [:svg (embed-svg @svg)]
-    [:div {:class "floatTL"
-           :style {:top "50%"
-                   :left "10%"}}
-     (assoc-in (assoc-in @svg [1 :width] "100%") [1 :viewBox] "0 0 100% 100%")
-     ;; @svg
-     ]
+    [:img {:class "floatTL"
+           :style {:top "30%"
+                   :left "10%"}
+           :src @character
+           :width "10%"}]
+
+     ;; (assoc-in @svg [1 :style] {:width "100%" :padding-bottom "200%" :height "1px" :overflow "visible"})
+    ;; [:svg (embed-svg @svg
+    ;; [:div {:class "scaling-svg-container"
+    ;;        :style {:top "50%"
+    ;;                :left "50%"
+    ;;                :width "300px"
+    ;;                :padding-bottom "20%"}
+    ;;        }
+     ;; (assoc-in (assoc-in @svg [1 :width] "100px") [1 :viewBox] "0 0 100 100")
+     ;; (assoc-in (assoc-in @svg [1 :preserve-aspect-ratio] "none") [1 :viewBox] "0 0 100 600")
+     ;; (assoc-in (assoc-in @svg [1 :preserve-aspect-ratio] "none") [1 :width] "200px")
+     ;; (assoc-in @svg [1 :width] "auto")
+     ;; (assoc-in (assoc-in @svg [1 :class] "scaling-svg") [1 :viewBox] "0 0 50 300")
+    ;;  ;; @svg
+    ;;  ]
     ))
 
 (defn foot []
@@ -58,10 +96,26 @@
            :style {:top "85%"
                    :left "80%"}
            :on-click #(js/alert "You pick up the foot")}
-     (assoc-in (assoc-in @foot [1 :width] "100%") [1 :viewBox] "0 0 70% 70%")
+     (assoc-in (assoc-in @foot [1 :width] "100%") [1 :viewBox] "0 0 70 70")
      ;; @svg
      ])
   )
+
+
+(defn face []
+  (let [foot (re-frame/subscribe [:foot])]
+    [:div
+     ])
+  )
+
+
+(defn scene []
+  (let [objects (re-frame/subscribe [:objects])]
+    [:div
+     (for [o @objects]
+       [object o])]
+    ;; [object (first @objects)]
+    ))
 
 
 ;; (defn backdrop
@@ -72,9 +126,18 @@
 
 (defn main-panel []
   (fn []
-    [re-com/v-box
-     :height "100%"
-     :children [
-                [backdrop]
-                [character]
-                [foot]]]))
+    (let [objects (re-frame/subscribe [:objects])]
+      [re-com/v-box
+       :height "100%"
+       :children [
+                  [backdrop]
+                  ;; [scene]
+                  [character]
+                  (for [o @objects]
+                    [object o])
+                  [dialogue]
+                  [exit-left]
+                  [exit-right]
+                  ;; [face]
+                  ;; [dialogue]
+                  ]])))

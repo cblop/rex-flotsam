@@ -32,6 +32,16 @@
  (fn [db [_ svg]]
    (assoc db :character svg)))
 
+(re-frame/reg-event-db
+ :set-dialogue
+ (fn [db [_ dialogue]]
+   (assoc db :dialogue dialogue)))
+
+(re-frame/reg-event-db
+ :set-objects
+ (fn [db [_ os]]
+   (assoc db :objects os)))
+
 
 (re-frame/reg-event-db
  :set-foot

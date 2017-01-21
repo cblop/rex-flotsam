@@ -24,7 +24,7 @@
   ;; (re-frame/dispatch-sync [:get-characters])
   ;; (re-frame/dispatch-sync [:get-objects])
   ;; (re-frame/dispatch-sync [:backdrop "backdrops/beach1.svg"])
-  (re-frame/dispatch-sync [:character "characters/rex.svg"])
+  (re-frame/dispatch-sync [:set-character "characters/rex.svg"])
   (re-frame/dispatch-sync [:foot "objects/foot.svg"])
   (dev-setup)
   (mount-root))
