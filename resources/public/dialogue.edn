@@ -4,7 +4,7 @@
  :questions [
              {:id 0
               :topic :evidence
-              :question "Detective Rex Flotsam, SBPD. Are you aware that a severed human foot was on the beach not far from your van?"
+              :question "Detective Rex Flotsam, SBPD. Are you aware that a severed human foot was on the beach not far from here?"
               :realness 0
               }
              {:id 1
@@ -273,85 +273,86 @@
           :answer "..."
           :nudge 0}
         ]
-  :luce [{:question -1
-          :answer "Your guess is as good as mine."
-          :nudge 0}
-         {:question 0
-          :answer ""
-          :nudge 0}
-         {:question 1
-          :answer ""
-          :nudge 1}
-         {:question 2
-          :answer ""
-          :nudge 0}
-         {:question 3
-          :answer ""
-          :nudge 1}
-         {:question 4
-          :answer ""
-          :nudge 0}
-         {:question 5
-          :answer ""
-          :nudge 1}
-         {:question 6
-          :answer ""
-          :nudge 1}
-         {:question 7
-          :answer ""
-          :nudge 0}
-         {:question 8
-          :answer ""
-          :nudge 1}
-         {:question 9
-          :answer ""
-          :nudge 1}
-         {:question 10
-          :answer ""
-          :nudge 1}
-         {:question 11
-          :answer ""
-          :nudge 1}
-         {:question 12
-          :answer ""
-          :nudge 1}
-         {:question 13
-          :answer ""
-          :nudge 0}
-         {:question 14
-          :answer ""
-          :nudge 1}
-         {:question 15
-          :answer ""
-          :nudge 1}
-         {:question 16
-          :answer ""
-          :nudge 0}
-         {:question 17
-          :answer ""
-          :nudge 1}
-         {:question 18
-          :answer ""
-          :nudge 1}
-         {:question 19
-          :answer ""
-          :nudge 0}
-         {:question 20
-          :answer ""
-          :nudge 1}
-         {:question 21
-          :answer ""
-          :nudge 0}
-         {:question 22
-          :answer ""
-          :nudge 1}
-         {:question 23
-          :answer ""
-          :nudge 0}
-         {:question 24
-          :answer ""
-          :nudge 0}
-         {:question 25
-          :answer ""
-          :nudge 1}
-         ]}
+  :luce {:intro ["How are you? Mine name is Luce."]
+         :questions [{:question -1
+                      :answer "Your guess is as good as mine."
+                      :nudge 0}
+                     {:question 0
+                      :answer "No, officer, I don't know anything about it."
+                      :nudge 0}
+                     {:question 1
+                      :answer "I heard something... a couple arguing, I heard."
+                      :nudge 1}
+                     {:question 2
+                      :answer "I don't know anything about any killings, but I'm happy to answer any questions you have."
+                      :nudge 0}
+                     {:question 3
+                      :answer "...weren't you saying that was a foot just now?"
+                      :nudge 1}
+                     {:question 4
+                      :answer "No, officer. She wasn't anyone that I know."
+                      :nudge 0}
+                     {:question 5
+                      :answer "There was a murder. A couple of junkies were arguing over something. It got ugly."
+                      :nudge 1}
+                     {:question 6
+                      :answer "That was one of hers. The girl that got murdered."
+                      :nudge 1}
+                     {:question 7
+                      :answer "..."
+                      :nudge 0}
+                     {:question 8
+                      :answer "...are you sure that's not just a shoe?"
+                      :nudge 1}
+                     {:question 9
+                      :answer "Yeah, a foot would be pretty strange. But that's no foot!"
+                      :nudge 1}
+                     {:question 10
+                      :answer "I saw something. A couple of junkies arguing over a fix."
+                      :nudge 1}
+                     {:question 11
+                      :answer "I saw the whole thing. Didn't see the face of the killer, though. He got away before they could catch him."
+                      :nudge 1}
+                     {:question 12
+                      :answer "I saw them take the body away. It was a woman... say, didn't you know her?"
+                      :nudge 1}
+                     {:question 13
+                      :answer "Sorry officer, I can't help you with that."
+                      :nudge 0}
+                     {:question 14
+                      :answer "It was a young girl. Such a pity."
+                      :nudge 1}
+                     {:question 15
+                      :answer "That's right. It was two junkies arguing over a fix. Their last stash, hidden inside a shoe."
+                      :nudge 1}
+                     {:question 16
+                      :answer "..."
+                      :nudge 0}
+                     {:question 17
+                      :answer "Did you see the girl get murdered as well? Were you there?"
+                      :nudge 1}
+                     {:question 18
+                      :answer "Hello again! I didn't know you were a detective. You must have been doing undercover work before."
+                      :nudge 1}
+                     {:question 19
+                      :answer "I was here officer. The same as every night..."
+                      :nudge 0}
+                     {:question 20
+                      :answer "It was a young couple, arguing over something."
+                      :nudge 1}
+                     {:question 21
+                      :answer "Don't worry officer, I'm sure you'll find him."
+                      :nudge 0}
+                     {:question 22
+                      :answer "...did you have something to do with the killing? Did you know the girl involved?"
+                      :nudge 1}
+                     {:question 23
+                      :answer "..."
+                      :nudge 0}
+                     {:question 24
+                      :answer "Beats me, officer."
+                      :nudge 0}
+                     {:question 25
+                      :answer "So it was you. You killed her, just to get to the stash she was hiding from you, trying to save you from the addiction that was turning you into someone else."
+                      :nudge 1}
+                     ]}}
