@@ -1,0 +1,29 @@
+<svg id="svg2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="1080" width="1920" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1080" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <defs id="defs4">
+  <linearGradient id="linearGradient4710" y2="633.27" gradientUnits="userSpaceOnUse" x2="896.61" y1="-27.491" x1="893.3">
+   <stop id="stop4706" stop-color="#0000cb" offset="0"/>
+   <stop id="stop4708" stop-color="#f0f" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient4740" y2="824.07" gradientUnits="userSpaceOnUse" x2="865.01" y1="1052.4" x1="865.01">
+   <stop id="stop4736" stop-color="#ffe680" offset="0"/>
+   <stop id="stop4738" stop-color="#fff" offset="1"/>
+  </linearGradient>
+  <filter id="filter6764" style="color-interpolation-filters:sRGB">
+   <feFlood id="feFlood6766" result="flood" flood-color="rgb(255,255,255)"/>
+   <feComposite id="feComposite6768" operator="in" result="composite1" in2="SourceGraphic" in="flood"/>
+   <feGaussianBlur id="feGaussianBlur6770" stdDeviation="22" result="blur" in="composite1"/>
+   <feOffset id="feOffset6772" result="offset" dx="0" dy="0"/>
+   <feComposite id="feComposite6774" operator="over" result="composite2" in2="offset" in="SourceGraphic"/>
+  </filter>
+ </defs>
+ <g id="layer1" transform="translate(0 27.638)">
+  <rect id="rect4702" opacity=".93" height="1080.9" width="1919.3" stroke="#000" y="-28.501" x="0" stroke-width="3.4" fill="url(#linearGradient4710)"/>
+  <rect id="rect5115" height="356" width="540" y="-33.638" x="1386" fill="none"/>
+  <rect id="rect4714" height="386.42" width="1917.8" stroke="#000" y="661.16" x="-3.3027" stroke-width="4.8757" fill="url(#linearGradient4740)"/>
+  <path id="path4712" d="m-7.9979 634.16h1929.2v169.7s-195.57 58.588-260.76 60.608c-65.19 2.0203-393.18-74.75-450.22-76.77-57.042-2.0203-362.62 44.446-417.63 46.466-55.004 2.0203-283.17 14.142-340.21-2.0203-57.03-16.15-327.98-54.54-366.69-56.56-38.704-2.02-93.708-8.08-93.708-8.08z" fill-rule="evenodd" stroke="#0000ac" stroke-width="1.0042px" fill="#000067"/>
+  <g id="g6760" filter="url(#filter6764)">
+   <path id="path6721" opacity="0.93" d="m1706 36.362a134 134 0 0 0 -134 134 134 134 0 0 0 134 134 134 134 0 0 0 134 -134 134 134 0 0 0 -134 -134zm0 32a102 102 0 0 1 102 102 102 102 0 0 1 -102 102 102 102 0 0 1 -102 -102 102 102 0 0 1 102 -102z" fill="#fff"/>
+   <rect id="rect6758" opacity="0.93" height="416" width="534" y="-31.638" x="1392" fill="none"/>
+  </g>
+ </g>
+</svg>

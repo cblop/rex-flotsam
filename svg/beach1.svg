@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1920"
+   height="1080"
+   viewBox="0 0 1920 1080"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="beach1.svg">
+  <defs
+     id="defs4">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4734">
+      <stop
+         style="stop-color:#ffe680;stop-opacity:1;"
+         offset="0"
+         id="stop4736" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1"
+         offset="1"
+         id="stop4738" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4704">
+      <stop
+         style="stop-color:#0000cb;stop-opacity:1"
+         offset="0"
+         id="stop4706" />
+      <stop
+         style="stop-color:#ff00ff;stop-opacity:1"
+         offset="1"
+         id="stop4708" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4704"
+       id="linearGradient4710"
+       x1="893.29517"
+       y1="-27.490887"
+       x2="896.61383"
+       y2="633.27075"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4734"
+       id="linearGradient4740"
+       x1="865.01086"
+       y1="1052.3622"
+       x2="865.01086"
+       y2="824.06769"
+       gradientUnits="userSpaceOnUse" />
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter5123">
+      <feFlood
+         flood-opacity="1"
+         flood-color="rgb(255,255,255)"
+         result="flood"
+         id="feFlood5125" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite5127" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="22"
+         result="blur"
+         id="feGaussianBlur5129" />
+      <feOffset
+         dx="0"
+         dy="0"
+         result="offset"
+         id="feOffset5131" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite5133" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter6764">
+      <feFlood
+         flood-opacity="1"
+         flood-color="rgb(255,255,255)"
+         result="flood"
+         id="feFlood6766" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite6768" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="22"
+         result="blur"
+         id="feGaussianBlur6770" />
+      <feOffset
+         dx="0"
+         dy="0"
+         result="offset"
+         id="feOffset6772" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite6774" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.5"
+     inkscape:cx="1219.9022"
+     inkscape:cy="67.084039"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1920"
+     inkscape:window-height="1064"
+     inkscape:window-x="0"
+     inkscape:window-y="16"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="opacity:1"
+     transform="translate(0,27.63784)">
+    <rect
+       style="fill:url(#linearGradient4710);fill-opacity:1;stroke:#000000;stroke-width:3.4000001;stroke-miterlimit:4;stroke-dasharray:none;opacity:0.93"
+       id="rect4702"
+       width="1919.2898"
+       height="1080.8633"
+       x="0"
+       y="-28.501062"
+       inkscape:export-filename="/home/_mthom/repos/rex-flotsam/img/backdrops/beach"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:none;stroke-width:3.4000001;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect5115"
+       width="540"
+       height="356"
+       x="1386"
+       y="-33.63784"
+       inkscape:export-filename="/home/_mthom/repos/rex-flotsam/img/backdrops/beach"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:url(#linearGradient4740);fill-opacity:1;stroke:#000000;stroke-width:4.87574339;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4714"
+       width="1917.8141"
+       height="386.42282"
+       x="-3.3027387"
+       y="661.16083"
+       inkscape:export-filename="/home/_mthom/repos/rex-flotsam/img/backdrops/beach"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#000067;fill-opacity:1;fill-rule:evenodd;stroke:#0000ac;stroke-width:1.00312352px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -3.9984384,634.16057 1925.2258384,0 0,169.70333 c 0,0 -195.1655,58.58805 -260.2207,60.60833 -65.055,2.02027 -392.3639,-74.75028 -449.287,-76.77057 -56.9233,-2.02027 -361.86932,44.44612 -416.75961,46.46639 -54.89026,2.02029 -282.58328,14.14196 -339.50654,-2.02027 C 398.5303,815.98556 128.14483,777.60028 89.518337,775.58 50.891843,773.55973 -3.9984384,767.4989 -3.9984384,767.4989 Z"
+       id="path4712"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/_mthom/repos/rex-flotsam/img/backdrops/beach"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       id="g6760"
+       style="filter:url(#filter6764)"
+       inkscape:export-filename="/home/_mthom/repos/rex-flotsam/img/backdrops/beach"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <path
+         inkscape:connector-curvature="0"
+         id="path6721"
+         d="m 1706,36.36216 a 134,134 0 0 0 -134,134 134,134 0 0 0 134,134 134,134 0 0 0 134,-134 134,134 0 0 0 -134,-134 z m 0,32 a 102,102 0 0 1 102,102 102,102 0 0 1 -102,102 102,102 0 0 1 -102,-102 102,102 0 0 1 102,-102 z"
+         style="opacity:0.93000022;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:3.4000001;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <rect
+         y="-31.63784"
+         x="1392"
+         height="416"
+         width="534"
+         id="rect6758"
+         style="opacity:0.93000016;fill:none;fill-opacity:1;stroke:none;stroke-width:3.4000001;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2"
+     transform="translate(0,27.63784)" />
+</svg>

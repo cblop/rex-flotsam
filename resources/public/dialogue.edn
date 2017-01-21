@@ -1,0 +1,93 @@
+{:comments [{:action 0
+             :comment ""
+             :nudge 0}]
+ :questions [
+             {:id 0
+              :topic :evidence
+              :question "Are you aware that a severed human foot was on the beach not far from your van?"
+              :realness 0
+              }
+             {:id 1
+              :topic :murder
+              :question "Detective Flotsam here. Are you aware that there was a murder here last night?"
+              :realness 0}
+             {:id 2
+              :topic :victim
+              :question "This foot must belong to someone. Who was killed last night?"
+              :realness 0}
+             {:id 3
+              :topic :evidence
+              :question "Why am I holding a shoe?"
+              :realness 3}
+             {:id 4
+              :topic :victim
+              :question "There was a murder last night. Did you know the victim?"
+              :realness 1}
+             {:id 5
+              :topic :murder
+              :question "I have a feeling something strange happened here last night. Do you know anything about it?"
+              :realness 3}
+             {:id 6
+              :topic :evidence
+              :question "Who does this shoe belong to?"
+              :realness 4}
+             {:id 7
+              :topic :murder
+              :question "My God. What did I do?"
+              :realness 5}
+             {:id 8
+              :topic :evidence
+              :question "There is something strange about this foot that I found on the beach..."
+              :realness 2}
+             {:id 9
+              :topic :evidence
+              :question "Strange thing to find on a beach, a foot. How do you think it got there?"
+              :realness 1}
+             {:id 10
+              :topic :murder
+              :question "What happened at the beach last night? Were there any witnesses?"
+              :realness 1}
+             {:id 11
+              :topic :murder
+              :question "Did you see anything suspicious happening here last night?"
+              :realness 2}
+             {:id 12
+              :topic :victim
+              :question "I don't see any corpses. There's only this severed foot. Have you seen anything?"
+              :realness 1}
+             {:id 13
+              :topic :victim
+              :question ""
+              :realness 2}
+             {:id 14
+              :topic :victim
+              :question "Though I'm not too sure what happened here last night, there was a crime, and there must have been a victim. Who was it?"
+              :realness 3}
+             {:id 15
+              :topic :victim
+              :question ""
+              :realness 4}
+             {:id 16
+              :topic :victim
+              :question ""
+              :realness 5}
+             ]
+ :answers
+ {:adam [{:question -1
+          :answer "I wouldn't know about that."
+          :nudge 0}
+         {:question 0
+          :answer ""
+          :nudge 0}]
+  :sam [{:question -1
+         :answer "I don't know anything, man!"
+         :nudge 0}
+        {:question 0
+         :answer ""
+         :nudge 0}]
+  :luce [{:question -1
+          :answer "Your guess is as good as mine."
+          :nudge 0}
+         {:question 0
+          :answer ""
+          :nudge 0}]}
