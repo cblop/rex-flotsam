@@ -106,7 +106,7 @@
               :src (:face this-char)
               :width "50%"
               :on-click callback}]
-       [:textarea {:class (if (= (:name this-char) :rex) "floatTL line-left" "floatTL line-right") :rows 10 :cols 29
+       [:textarea {:class (if (= (:name this-char) :rex) "floatTL line-left" "floatTL line-right") :rows 10 :cols 28
                    :on-click callback
                    }
         (:line line)]])))
