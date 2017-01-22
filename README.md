@@ -1,20 +1,27 @@
-# ggj17
+# Rex Flotsam: Beach Cop
 
-A [re-frame](https://github.com/Day8/re-frame) application designed to ... well, that part is up to you.
+You are a detective on the beach trying to find the owner of a washed-up severed foot. But soon it becomes clear that things are not as they seem...
 
-## Development Mode
+A game for the Global Game Jam 2017, built using ClojureScript, SVG and [re-frame](https://github.com/Day8/re-frame).
 
-### Start Cider from Emacs:
 
-Put this in your Emacs config file:
+The game is precompiled into Javascript/HTML, so you can just open up the [index.html](resources/public/index.html) file in your browser.
+
+A hosted version of the game is at: [mthompson.org/rex](http://mthompson.org/rex)
+
+You will need to install [leiningen](https://leiningen.org) to build/run the game from source:
+
+## Production Build
+
+To compile clojurescript to javascript:
 
 ```
-(setq cider-cljs-lein-repl "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))")
+lein clean
+lein cljsbuild once min
 ```
+Then open [index.html](resources/public/index.html) in your browser.
 
-Navigate to a clojurescript file and start a figwheel REPL with `cider-jack-in-clojurescript` or (`C-c M-J`)
-
-### Run application:
+## Or run application server with Leiningen:
 
 ```
 lein clean
@@ -24,13 +31,3 @@ lein figwheel dev
 Figwheel will automatically push cljs changes to the browser.
 
 Wait a bit, then browse to [http://localhost:3449](http://localhost:3449).
-
-## Production Build
-
-
-To compile clojurescript to javascript:
-
-```
-lein clean
-lein cljsbuild once min
-```
