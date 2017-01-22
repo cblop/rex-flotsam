@@ -43,21 +43,29 @@
          :label @name
          :level :level1]]])))
 
+;; (defn get-letterbox [])
+
 (defn backdrop []
   (let [window (dom/getWindow)
         viewport-size (dom/getViewportSize window)
         scene (re-frame/subscribe [:scene])
         svg (:file @scene)
+        letterbox (re-frame/subscribe [:letterbox])
         ]
     ;; [:svg (embed-svg @svg)]
     ;; [:svg @svg]
     [:div {:class "floatTL"
+           :style {:padding-top @letterbox
+                   :padding-bottom @letterbox
+                   :background-color "black"}
            }
+     ;; [:div {:style {:height @letterbox
+     ;;                :background-color "black"}}]
      [:img {:src svg
             :width "100%"
             :height "auto"
             }]]
-
+    ;; [:div {:style {:height @letterbox}}]
     ))
 
 (defn object [thing]
@@ -238,3 +246,9 @@
                   ;; [face]
                   ;; [dialogue]
                   ]])))
+
+(set! (.-onload js/window)
+      (fn [] (re-frame/dispatch [:set-letterbox])))
+
+(set! (.-onresize js/window)
+      (fn [] (re-frame/dispatch [:set-letterbox])))

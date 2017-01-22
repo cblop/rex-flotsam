@@ -425,5 +425,6 @@
    :questions []
    :asking false
    :talking false
+   :letterbox 0
    })
 

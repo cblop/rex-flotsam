@@ -1,5 +1,6 @@
 (ns ggj17.events
     (:require [re-frame.core :as re-frame]
+              [goog.dom :as dom]
               [ajax.core :refer [GET POST]]
               [hickory.core :as h]
               [ggj17.db :as db]))
@@ -43,6 +44,19 @@
  :change-realness
  (fn [db [_ val]]
    (assoc db :realness (+ (:realness db) val))))
+
+(defn letterbox-size []
+  (let [width (.-innerWidth js/window)
+        height (.-innerHeight js/window)
+        aspect (- height (/ width 1.78))]
+    (if (> aspect 0) (int (/ aspect 2)) 0)))
+
+;; (letterbox-size)
+
+(re-frame/reg-event-db
+ :set-letterbox
+ (fn [db _]
+   (assoc db :letterbox (letterbox-size))))
 
 (re-frame/reg-event-db
  :show-line

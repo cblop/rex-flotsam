@@ -63,6 +63,12 @@
 
 
 (re-frame/reg-sub
+ :letterbox
+ (fn [db]
+   (:letterbox db)))
+
+
+(re-frame/reg-sub
  :realness
  (fn [db]
    (:realness db)))
