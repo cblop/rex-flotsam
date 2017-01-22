@@ -3,9 +3,17 @@
 
 (def db (re-frame/subscribe [:db]))
 
+(:scene @db)
+(:questions @db)
+
+(def scene (re-frame/subscribe [:scene]))
+
+(:characters @scene)
+
 (:character @db)
 (:foot @db)
 (:objects @db)
+(:dialogue @db)
 (keys @db)
 
 (re-frame/dispatch [:set-character "characters/rex.svg"])
@@ -20,10 +28,26 @@
 (re-frame/dispatch [:set-dialogue
                     {:character :rex
                      :file "characters/rex-face.svg"
-                     :id 0}])
+                     :type :question
+                     :id 5}])
 
 (re-frame/dispatch [:set-dialogue
                     {:character :sam
                      :file "characters/sam-face.svg"
+                     :type :answer
+                     :id 0}])
+
+(re-frame/dispatch [:set-dialogue nil])
+
+(re-frame/dispatch [:set-dialogue
+                    {:character :adam
+                     :type :answer
+                     :file "characters/adam-face.svg"
+                     :id 0}])
+
+(re-frame/dispatch [:set-dialogue
+                    {:character :luce
+                     :type :answer
+                     :file "characters/scarlett-face.svg"
                      :id 0}])
 

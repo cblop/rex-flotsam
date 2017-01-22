@@ -26,3 +26,30 @@
 .object:hover {
     cursor:pointer;
 }
+.dialogue {
+  
+}
+.line-right {
+    background:transparent;
+    border: 0 none;
+    color: black;
+    top:7%;
+    left:69%;
+}
+.line-left {
+    background:transparent;
+    border: 0 none;
+    color: black;
+    top:7%;
+    left:25%;
+}
+button {
+    color:white;
+    background-color:#333;
+    border:none;
+}
+button:hover {
+    color:black;
+    background-color:#eee;
+    border:none;
+}

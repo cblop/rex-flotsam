@@ -21,9 +21,25 @@
 
 
 (re-frame/reg-sub
+ :scene-no
+ (fn [db]
+   (:scene db)))
+
+(re-frame/reg-sub
+ :scene
+ (fn [db]
+   (nth (:scenes db) (:scene db))))
+
+(re-frame/reg-sub
  :character
  (fn [db]
    (:character db)))
+
+
+(re-frame/reg-sub
+ :lines
+ (fn [db]
+   (:lines db)))
 
 (re-frame/reg-sub
  :objects
@@ -31,6 +47,34 @@
    (:objects db)))
 
 (re-frame/reg-sub
+ :characters
+ (fn [db]
+   (:characters db)))
+
+(re-frame/reg-sub
  :dialogue
  (fn [db]
    (:dialogue db)))
+
+(re-frame/reg-sub
+ :questions
+ (fn [db]
+   (:questions db)))
+
+
+(re-frame/reg-sub
+ :realness
+ (fn [db]
+   (:realness db)))
+
+
+(re-frame/reg-sub
+ :asking
+ (fn [db]
+   (:asking db)))
+
+
+(re-frame/reg-sub
+ :talking
+ (fn [db]
+   (:talking db)))

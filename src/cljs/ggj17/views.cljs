@@ -5,7 +5,26 @@
    [hickory.core :as h]
    [re-com.core :as re-com]))
 
-(defn handler [response])
+(defn get-line []
+  (let [d (re-frame/subscribe [:dialogue])
+        character (:character @d)
+        type (:type @d)
+        id (:id @d)
+        lines (re-frame/subscribe [:lines])]
+    (if (= character :rex)
+      (if (= type :question) (:question (first (filter #(= (:id %) id) (:questions @lines))))
+          (:comment (first (filter #(= % id) (:comments @lines))))
+          )
+      (if (= type :answer) (:answer (first (filter #(= (:question %) id) (:questions (get (:answers lines) character)))))))))
+
+;; (:answer (first (filter #(= (:question %) 0) (:questions (get (:answers lines) :sam)))))
+
+;; (:question (first (filter #(= (:id %) 0) (:questions lines))))
+
+;; (get-line :rex :question 0)
+;; (get-line :luce :answer 0)
+
+;; (defn handler [response])
 
 (defn embed-svg [svg-string]
   (let [parsed (h/parse svg-string)
@@ -27,14 +46,18 @@
 (defn backdrop []
   (let [window (dom/getWindow)
         viewport-size (dom/getViewportSize window)
-        svg (re-frame/subscribe [:backdrop])
+        scene (re-frame/subscribe [:scene])
+        svg (:file @scene)
         ]
     ;; [:svg (embed-svg @svg)]
     ;; [:svg @svg]
-    [:div {:class "floatTL"}
-     [:img {:src "backdrops/beach1.svg"
+    [:div {:class "floatTL"
+           }
+     [:img {:src svg
             :width "100%"
-            :height "100%"}]]
+            :height "auto"
+            }]]
+
     ))
 
 (defn object [thing]
@@ -45,24 +68,58 @@
            :width (:width thing)
            :on-click (:action thing)}])
 
+(defn npc [char]
+  [:img {:class "floatTL object"
+         :style {:top (:y char)
+                 :left (:x char)}
+         :src (:body char)
+         :width (:width char)
+         :on-click #(re-frame/dispatch [:question (:name char)])}])
 
-(defn dialogue []
-  (let [d (re-frame/subscribe [:dialogue])
+(defn get-answer [line]
+  {:character :sam
+   :type :answer
+   :file "characters/sam-face.svg"
+   :id 0})
+
+(defn dialogue [{:keys [character id]}]
+  (let [chars (re-frame/subscribe [:characters])
+        this-char (first (filter #(= (:name %) character) @chars))
+        scene (re-frame/subscribe [:scene])
+        other-char (first (:characters @scene))
+        line (first (filter #(= (:id %) id) (:dialogue this-char)))
         ]
-    (if-not (nil? @d)
-      [:img {:class "floatTL"
-             :style {:top "5%"
-                     :left (if (= (:character @d) :rex) "5%" "47%")}
-             :src (:file @d)
-             :width "50%"
-             :on-click #()}])))
+    (if-not (nil? line)
+      [:div {:class "dialogue"}
+       [:img {:class "floatTL"
+              :style {:top "5%"
+                      :left (if (= (:name this-char) :rex) "5%" "47%")}
+              :src (:face this-char)
+              :width "50%"
+              :on-click #(do
+                           (re-frame/dispatch [:set-dialogue nil])
+                           (if (and (= (:name this-char) :rex) other-char)
+                             (js/setTimeout
+                              (fn [] (re-frame/dispatch [:say other-char (:id line)])) 100))
+                           )}]
+       [:textarea {:class (if (= (:name this-char) :rex) "floatTL line-left" "floatTL line-right") :rows 10 :cols 29
+                   :on-click #(do
+                                (re-frame/dispatch-sync [:set-dialogue nil])
+                                (if (and (= (:name this-char) :rex) other-char)
+                                  (js/setTimeout
+                                   (fn [] (re-frame/dispatch [:say other-char (:id line)])) 100))
+                                )
+                   }
+        (:line line)]])))
 
 (defn exit-left []
-  [:div {:class "exit-left"}])
+  [:div {:class "exit-left"
+         :on-click #(re-frame/dispatch [:change-scene :left])}])
 
 
 (defn exit-right []
-  [:div {:class "exit-right"}])
+  [:div {:class "exit-right"
+         :on-click #(re-frame/dispatch [:change-scene :right])}])
 
 (defn character []
   (let [character (re-frame/subscribe [:character])
@@ -115,7 +172,27 @@
      (for [o @objects]
        [object o])]
     ;; [object (first @objects)]
-    ))
+    )) 
+
+(defn get-questions [realness]
+  (let [lines (re-frame/subscribe [:lines])]
+    (filter #(= (:realness %) realness) (:questions @lines))))
+
+(defn questions [qs]
+  [:div {:class "floatTL"
+         :style {:width "100%"}}
+   (map (fn [q i]
+          [re-com/button
+           :label (:line q)
+           :class "floatTL question-button"
+           :style {:top (+ (* 50 i) 300)
+                   :left "5%"
+                   :width "90%"}
+           :on-click #(do
+                        (re-frame/dispatch [:no-questions])
+                        (re-frame/dispatch [:comment (:id q)])
+                        )]) qs (range (count qs)))
+   ])
 
 
 ;; (defn backdrop
@@ -124,20 +201,41 @@
 ;;           backdrop [re-frame/subscribe [:backdrop]]]
 ;;       )))
 
+(defn get-object [name]
+  (let [objects (re-frame/subscribe [:objects])]
+    (first (filter #(= (:name %) name) @objects))))
+
+(defn get-character [name]
+  (let [characters (re-frame/subscribe [:characters])]
+    (first (filter #(= (:name %) name) @characters))))
+
 (defn main-panel []
   (fn []
-    (let [objects (re-frame/subscribe [:objects])]
+    (let [scene-no (re-frame/subscribe [:scene-no])
+          scene (re-frame/subscribe [:scene])
+          qs (re-frame/subscribe [:questions])
+          talking (re-frame/subscribe [:talking])
+          characters (:characters @scene)
+          d (re-frame/subscribe [:dialogue])
+          objects (:objects @scene)]
       [re-com/v-box
        :height "100%"
        :children [
                   [backdrop]
                   ;; [scene]
                   [character]
-                  (for [o @objects]
-                    [object o])
-                  [dialogue]
-                  [exit-left]
-                  [exit-right]
+                  (for [o objects]
+                    [object (get-object o)])
+                  (for [c characters]
+                    [npc (get-character c)])
+                  (if @d
+                    [dialogue @d])
+                  (if (seq @qs)
+                    [questions @qs])
+                  (if-not (= @scene-no 0)
+                    [exit-left])
+                  (if-not (= @scene-no 3)
+                    [exit-right])
                   ;; [face]
                   ;; [dialogue]
                   ]])))

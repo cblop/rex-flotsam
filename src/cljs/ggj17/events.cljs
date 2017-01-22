@@ -28,6 +28,65 @@
     ))
 
 (re-frame/reg-event-db
+ :comment
+ (fn [db [_ id]]
+   (re-frame/dispatch [:set-dialogue {:character :rex :id id}])
+   db))
+
+(re-frame/reg-event-db
+ :say
+ (fn [db [_ char id]]
+   (re-frame/dispatch [:set-dialogue {:character char :id id}])
+   db))
+
+(re-frame/reg-event-db
+ :show-line
+ (fn [db [_ character id]]
+   (assoc db :talking true :dialogue )))
+
+
+(defn get-questions [player realness]
+  (filter #(= (:realness %) realness) (:dialogue player)))
+
+(re-frame/reg-event-db
+ :no-questions
+ (fn [db _]
+   (assoc db :questions [])))
+
+;; (re-frame/reg-event-db
+;;  :player-ask
+;;  (fn [db [_ id]]
+;;    ))
+
+(re-frame/reg-event-db
+ :question
+ (fn [db [_ char]]
+   (let [realness (:realness db)
+         player (first (filter #(= (:name %) :rex) (:characters db)))
+         qs (get-questions player realness)]
+     (assoc db :questions qs))))
+
+(re-frame/reg-event-db
+ :ask-questions
+ (fn [db _]
+   (assoc db :asking true)))
+
+(re-frame/reg-event-db
+ :change-scene
+ (fn [db [_ direction]]
+   (assoc db :scene (if (= direction :left) (dec (:scene db)) (inc (:scene db))))))
+
+(re-frame/reg-event-db
+ :set-asking
+ (fn [db [_ val]]
+   (assoc db :asking val)))
+
+(re-frame/reg-event-db
+ :set-talking
+ (fn [db [_ val]]
+   (assoc db :talking val)))
+
+(re-frame/reg-event-db
  :set-character
  (fn [db [_ svg]]
    (assoc db :character svg)))
