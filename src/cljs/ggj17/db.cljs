@@ -396,27 +396,27 @@
                  :face "characters/adam-face.svg"
                  :dialogue (:adam lines)
                  :x "70%"
-                 :y "25%"
+                 :y "35%"
                  :width "11%"}
                 {:name :sam
                  :body "characters/sam.svg"
                  :face "characters/sam-face.svg"
                  :dialogue (:sam lines)
                  :x "45%"
-                 :y "37%"
+                 :y "47%"
                  :width "11%"}
                 {:name :luce
                  :body "characters/luce.svg"
                  :face "characters/luce-face.svg"
                  :dialogue (:luce lines)
                  :x "65%"
-                 :y "25%"
+                 :y "35%"
                  :width "7%"}
                 ]
    :objects [{:name :foot
               :file "objects/foot.svg"
               :x "80%"
-              :y "70%"
+              :y "90%"
               :width "5%"
               :action #(re-frame/dispatch [:comment 26])}]
    :scene 0

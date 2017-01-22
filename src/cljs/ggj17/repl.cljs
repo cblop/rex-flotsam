@@ -14,6 +14,7 @@
 (:foot @db)
 (:objects @db)
 (:dialogue @db)
+(:realness @db)
 (keys @db)
 
 (re-frame/dispatch [:set-character "characters/rex.svg"])

@@ -88,6 +88,15 @@
         scene (re-frame/subscribe [:scene])
         other-char (first (:characters @scene))
         line (first (filter #(= (:id %) id) (:dialogue this-char)))
+        nudge (:nudge line)
+        callback #(do
+                    (if nudge (re-frame/dispatch [:change-realness nudge]))
+                    (re-frame/dispatch [:set-dialogue nil])
+                    (if (and (= (:name this-char) :rex) other-char)
+                      (js/setTimeout
+                       (fn [] (do
+                                (re-frame/dispatch [:say other-char (:id line)]))) 200))
+                    )
         ]
     (if-not (nil? line)
       [:div {:class "dialogue"}
@@ -96,19 +105,9 @@
                       :left (if (= (:name this-char) :rex) "5%" "47%")}
               :src (:face this-char)
               :width "50%"
-              :on-click #(do
-                           (re-frame/dispatch [:set-dialogue nil])
-                           (if (and (= (:name this-char) :rex) other-char)
-                             (js/setTimeout
-                              (fn [] (re-frame/dispatch [:say other-char (:id line)])) 100))
-                           )}]
+              :on-click callback}]
        [:textarea {:class (if (= (:name this-char) :rex) "floatTL line-left" "floatTL line-right") :rows 10 :cols 29
-                   :on-click #(do
-                                (re-frame/dispatch-sync [:set-dialogue nil])
-                                (if (and (= (:name this-char) :rex) other-char)
-                                  (js/setTimeout
-                                   (fn [] (re-frame/dispatch [:say other-char (:id line)])) 100))
-                                )
+                   :on-click callback
                    }
         (:line line)]])))
 

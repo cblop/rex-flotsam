@@ -40,6 +40,11 @@
    db))
 
 (re-frame/reg-event-db
+ :change-realness
+ (fn [db [_ val]]
+   (assoc db :realness (+ (:realness db) val))))
+
+(re-frame/reg-event-db
  :show-line
  (fn [db [_ character id]]
    (assoc db :talking true :dialogue )))
